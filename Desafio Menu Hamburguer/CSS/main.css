@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&display=sawp');
+@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+
+body {
+    padding: 0;
+    margin: 0;
+    color: white;
+    font-family: 'amatic sc', sans-serif;
+}
+
+.container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 3rem 0;
+}
+
+.card-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 90%;
+}
+
+.card {
+    --radius: 80px;
+    height: 300px;
+    width: 400px;
+    margin: 3rem 0 0 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    filter: grayscale(0.5);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+    position: relative;
+}
+
+.card-text {
+    width: 40%;
+    font-family: 'Acme', sans-serif;
+    font-size: 25px;
+    letter-spacing: 4px;
+    color: black;
+}
+
+.card img {
+    border-radius: var(--radius);
+    height: 300px;
+    width: 400px;
+}
+
+.card-wrapper {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+
+.card-wrapper::before {
+    content: '';
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    display: block;
+    border: 1px solid white;
+    border-radius: var(--radius);
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.card-wrapper h2 {
+    font-size: 40px;
+    font-family: 'Acme', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin: 0;
+    transition: 0.3s;
+}
+
+.card-wrapper p {
+    font-size: 0;
+    visibility: hidden;
+    opacity: 0;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.card:hover>.card-wrapper::before {
+    opacity: 1;
+    width: 350px;
+    height: 280px;
+}
+
+.card:hover>.card-wrapper p {
+    font-size: 25px;
+    font-family: sans-serif;
+    opacity: 1;
+    visibility: visible;
+}
+
+.card:hover {
+    filter: unset;
+}
+
+h3 {
+    font-size: 80px;
+    color: black;
+}
